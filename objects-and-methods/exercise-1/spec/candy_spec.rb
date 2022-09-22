@@ -8,9 +8,11 @@ RSpec.describe Candy do
     expect(candy.type).to eq('Skittles')
   end
 
-  xit 'has a different kind of candy' do
+  it 'has a different kind of candy' do
     candy = Candy.new('Snickers')
+    candy2 = Candy.new("Mars")
 
     expect(candy.type).to eq('Snickers')
+    expect(candy2.type).to eq("Mars")
   end
 end
