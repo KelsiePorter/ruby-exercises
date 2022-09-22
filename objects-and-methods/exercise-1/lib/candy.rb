@@ -5,7 +5,4 @@ class Candy
     @type = type
   end
 
-  # def type
-  #   @type
-  # end
 end

@@ -1,5 +1,6 @@
 class Bag
   attr_accessor :candies
+
   def initialize
     @candies = []
   end
@@ -13,9 +14,12 @@ class Bag
   end
 
   def count
-    @candies.size
+      @candies.size
   end
 
+  # def candies
+  #   @candies
+  # end
 
   def place_candy(a_candy)
     @candies << a_candy
