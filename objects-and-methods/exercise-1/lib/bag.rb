@@ -14,7 +14,7 @@ class Bag
   end
 
   def count
-      @candies.size
+    @candies.size
   end
 
   # def candies
@@ -33,5 +33,9 @@ class Bag
         return false
       end
     end
+  end
+
+  def remove_candy
+    @candies.pop
   end
 end
