@@ -1,4 +1,3 @@
-require "pry"
 class Bag
   attr_accessor :candies
 
@@ -10,7 +9,7 @@ class Bag
     if @candies.count >= 1
       return false
     else
-      true
+      return true
     end
   end
 
