@@ -1,3 +1,5 @@
+require "pry"
+
 RSpec.describe 'max and min by pattern' do
   it 'test 1'  do
     numbers = [1, 100, 1000, 1000000]
@@ -7,7 +9,7 @@ RSpec.describe 'max and min by pattern' do
         greatest = number
       end
     end
-    expect(greatest).to eq(100000)
+    expect(greatest).to eq(1000000)
   end
 
   it 'test 2' do
@@ -17,7 +19,7 @@ RSpec.describe 'max and min by pattern' do
       thousands: 1000,
       millions: 1000000
     }
-    greatest = magnitudes[magnitudes.keys[0]]
+    greatest = magnitudes[:ones]
     magnitudes.each do |name, value|
       if value > greatest
         greatest = value
@@ -26,11 +28,13 @@ RSpec.describe 'max and min by pattern' do
     expect(greatest).to eq(1000000)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     meals = ["banana", "nuts", "salad", "steak", "cake"]
     shortest_word = meals[0]
     meals.each do |meal|
-      # Your Code Here
+      if meal.length < shortest_word.length
+        shortest_word = meal
+      end
     end
 
     expect(shortest_word).to eq("nuts")

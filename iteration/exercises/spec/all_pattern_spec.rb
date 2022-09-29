@@ -45,7 +45,7 @@ RSpec.describe 'all pattern' do
     }
     all_four_letters = true
     words.each do |position, word|
-      if !word.length == 4
+      if word.length != 4
         all_four_letters = false
       end
     end
@@ -70,7 +70,7 @@ RSpec.describe 'all pattern' do
     }
     all_busy = true
     friend_status.each do |name, status|
-      if not status == :busy
+      if status != :busy
         all_busy = false
       end
     end
@@ -110,9 +110,13 @@ RSpec.describe 'all pattern' do
 
   it 'test 9' do
     snacks = ["GARLIC PLANTAINS", "SNICKERDOODLES", "Pretzels"]
-    all_caps = true
+    all_caps = false
     snacks.each do |snack|
-      all_caps = false unless snack.upcase == true
+      if snack.upcase == snack
+        all_caps = true
+      else
+        all_caps = false
+      end
     end
 
     expect(all_caps).to be false
@@ -120,13 +124,15 @@ RSpec.describe 'all pattern' do
 
   it 'test 10' do
     snacks = {
-      savory: "GARLIC PLANTAINS",
+      savory: "Garlic",
       sweet: "SNICKERDOODLES",
       salty: "Pretzels"
     }
     all_caps = true
     snacks.each do |type, snack|
-      if snack.upcase != true
+      if snack == snack.upcase
+        all_caps = true
+      else
         all_caps = false
       end
     end
