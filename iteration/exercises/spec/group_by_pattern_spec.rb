@@ -1,8 +1,11 @@
+require 'pry'
+
 RSpec.describe 'group by pattern' do
 
   it 'by word length' do
     words = ["sue", "alice", "steve", "sally", "adam", "fort", "tops", "dog", "cat"]
     grouped = Hash.new {|hash, key| hash[key] = []}
+    binding.pry
     words.each do |word|
       grouped[word.length] << word
     end

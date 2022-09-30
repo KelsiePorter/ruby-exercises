@@ -71,15 +71,15 @@ Consider working through the exercises in this order:
 * `select`
 * `find` (aka `detect`)
 * `sort_by`
-* `count`
+* ~~`count`~~
 * `reject`
-* `reduce` (this one is tricky!)
+* ~~`reduce`~~ (this one is tricky!)
 * `any?`
 * `all?`
-* `none?`
-* `one?`
+* ~~`none?`~~
+* ~~`one?`~~
 * `group_by` (this one is tricky too!)
-* `zip`
+* ~~`zip`~~
 
 You should work on the `pattern` test file in conjunction with the specific enumerable. `select_pattern_spec.rb` alongside `select_spec.rb`, etc.
 
@@ -93,4 +93,3 @@ Here's how we recommend you work through the exercises:
 * Run the `map_pattern_spec.rb` and solve the first exercise
 * Run the `map_spec.rb` and solve the same exercise
 * Repeat for each matching pair of exercises
-
