@@ -59,8 +59,7 @@ RSpec.describe 'all test' do
 
   it 'not all three digits long' do
     numbers = [981, 831, 509, 332, 892, 8999, 110]
-    # all_3_digits = numbers.all? {|number| number == 000}
-    all_3_digits = numbers.all? {|number| number.size == 3}
+    all_3_digits = numbers.all? {|number| number.to_s.size == 3}
     expect(all_3_digits).to eq(false)
   end
 
