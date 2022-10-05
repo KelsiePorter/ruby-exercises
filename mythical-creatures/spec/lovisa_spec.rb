@@ -1,4 +1,4 @@
-require 'rspec'
+require './spec/spec_helper'
 require './lib/lovisa'
 
 RSpec.describe Lovisa do
@@ -10,7 +10,6 @@ RSpec.describe Lovisa do
   it 'she is brilliant by default' do
     lovisa = Lovisa.new('Lovisa the Mentor')
     expect(lovisa.characteristics).to eq(['brilliant'])
-    expect(lovisa.brilliant?).to eq(true)
     expect(lovisa.brilliant?).to be true
   end
 
