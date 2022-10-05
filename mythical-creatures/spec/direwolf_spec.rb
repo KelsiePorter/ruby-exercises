@@ -1,5 +1,6 @@
 require './spec/spec_helper'
 require './lib/direwolf'
+require './lib/stark'
 
 RSpec.describe Direwolf do
   it 'has a name' do
@@ -79,7 +80,7 @@ RSpec.describe Direwolf do
     lady_wolf.protects(arya_stark)
 
     expect(summer_wolf.starks_to_protect).to include(sansa_stark)
-    expect(summer_wolf.starks_to_protect).to include(jon_stark)
+    expect(summer_wolf.starks_to_protect).to include(john_stark)
     expect(lady_wolf.starks_to_protect).to include(rob_stark)
     expect(lady_wolf.starks_to_protect).to include(bran_stark)
     expect(lady_wolf.starks_to_protect).to_not include(arya_stark)
@@ -129,9 +130,10 @@ RSpec.describe Direwolf do
     summer_wolf.leaves(arya_stark)
 
     expect(summer_wolf.starks_to_protect).to be_empty
-    expect(lady_wolf.starks_to_protect.first.name).to be('Sansa')
+    expect(lady_wolf.starks_to_protect.first.name).to eq('Sansa')
     expect(arya_stark.safe?).to be false
   end
+
 
   it 'returns the Stark object when it leaves' do
     summer_wolf = Direwolf.new('Summer', "Winterfell")
@@ -141,6 +143,7 @@ RSpec.describe Direwolf do
     rickon_stark = Stark.new('Rickon')
 
     summer_wolf.protects(arya_stark)
+    summer_wolf.protects(rickon_stark)
     lady_wolf.protects(sansa_stark)
     summer_wolf.leaves(arya_stark)
 
