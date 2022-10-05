@@ -1,5 +1,6 @@
 require './spec/spec_helper'
 require './lib/ogre'
+require './lib/human'
 
 RSpec.describe Ogre do
   it 'has a name' do
@@ -25,7 +26,7 @@ RSpec.describe Ogre do
 
     ogre.encounter(human)
 
-    expect(human.encounter_counter).to eq(1)
+    expect(ogre.encounter_counter).to eq(1)
   end
 
   it 'is noticed by humans every third encounter' do
@@ -45,7 +46,11 @@ RSpec.describe Ogre do
     ogre = Ogre.new('Brak')
     human = Human.new
 
-    6.times { ogre.encounter(human) }
+    5.times { ogre.encounter(human) }
+
+    expect(human.notices_ogre?).to be false
+
+    ogre.encounter(human)
 
     expect(human.notices_ogre?).to be true
   end
